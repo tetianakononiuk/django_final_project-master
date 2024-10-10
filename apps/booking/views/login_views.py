@@ -6,8 +6,11 @@ from django.contrib.auth import authenticate
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from apps.booking.serializers.serializers_login import LoginUserSerializer
+
 
 class LoginView(APIView):
+    serializer_class = LoginUserSerializer
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):

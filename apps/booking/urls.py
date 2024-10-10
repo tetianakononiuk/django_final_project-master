@@ -1,6 +1,7 @@
 from django.urls import path
 
 from apps.booking.views.login_views import LoginView
+from apps.booking.views.register_views import RegisterView
 from apps.booking.views.views import ApartmentCreateView, ApartmentListView,ApartmentUpdateView,ApartmentChangeActiveView
 
 
@@ -12,5 +13,5 @@ urlpatterns = [
     path('delete_apartments/<int:pk>/',ApartmentUpdateView.as_view(), name='put_apartment'),#http://127.0.0.1:8000/apartments/delete_apartments/1/ Anzeige löschen
     path('change_active/<int:pk>/', ApartmentChangeActiveView.as_view(), name='change_active'),#http://127.0.0.1:8000/apartments/change_active/1/ Die Anzeige auf active stellen oder unactive
     path('login/', LoginView.as_view(), name='login'),
-
+    path('register/', RegisterView.as_view(), name='register'),
 ]
